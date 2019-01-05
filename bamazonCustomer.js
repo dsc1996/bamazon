@@ -55,13 +55,14 @@ inquirer.prompt([
             {item_id: answer.userInput}
             ], function(err, result){
                 if(err) throw err;
-                console.log("Success! Your total is $" + total.toFixed(2) + ". Your item(s) will be shipped to you in 3-5 business days.");
+                console.log("Your total is $" + total.toFixed(2) + ".");
         });
         } else if (res[itemID].stock_quantity  === 0)  {
             console.log("This item is out of stock!")
         } else if   (res[itemID].stock_quantity > 0 || quantity > res[itemID].stock_quantity) {
-            console.log("We only have " + res[itemID].stock_quantity + " in stock")
+            console.log("We only have " + res[itemID].stock_quantity + " in stock!")
             }
+        
         reprompt();
         }
 
